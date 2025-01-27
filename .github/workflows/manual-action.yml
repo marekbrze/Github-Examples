@@ -1,0 +1,14 @@
+on: [workflow_dispatch]
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    name: Manual job
+    steps:
+      - name: First step
+        id: hello
+        uses: omenking/barsoom@0.0.6
+        with:
+          name: "Testowy"
+      - name: Second step
+        run: echo "Siema ${{ steps.hello.outputs.greeting }}"
